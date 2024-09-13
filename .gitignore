@@ -1,0 +1,8 @@
+# original data directory
+original/
+# compressed data directory
+compressed/
+# credentials
+credentials.yaml
+# cache __pycache__
+__pycache__/
