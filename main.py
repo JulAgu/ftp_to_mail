@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     # Compression of PDF files
     list_of_files = os.listdir(SRC_PATH)
-    for i in tqdm(list_of_files):
+    for i in list_of_files:
         if i.endswith(".pdf"):
             new_name = ("-").join(i.split("_")[0].split("-")[1:]) + ".pdf"
             compress(SRC_PATH + i, OUTPUT_PATH + new_name, power=2)
