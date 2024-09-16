@@ -25,7 +25,7 @@ def change_mail():
     pass
 
 def create_contents(tuple_info):
-    objet = "AGRILITY : Rapport de culture "
+    objet = "AGRILITY : Rapport de culture"
     message1 = "Bonjour " +  tuple_info[1] + ", \n\nVeuillez trouver ci-joint le rapport Agrility au " + date.today().strftime("%d/%m/%Y") +  " \n\nCordialement,\nLe service Agronomique"
     message2 = "Ceci est un message automatique, merci de ne pas y répondre. Au cas où vous auriez des questions, veuillez contacter t.patrier@agrial.com"
     return objet, message1, message2
@@ -71,7 +71,7 @@ def attach_file(tuple_info):
     pyautogui.click(parcourir)
     pyautogui.sleep(0.8)
     pyautogui.click(x=900, y=53, clicks=2)
-    pyautogui.sleep(0.8)
+    pyautogui.sleep(0.5)
     pyautogui.hotkey('ctrl', 'a')
     especial_string(r"D:\HOMEdev\ftp_to_mail\compressed")
     pyautogui.sleep(0.2)

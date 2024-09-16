@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from tqdm import tqdm
 
 from globals import SRC_PATH, OUTPUT_PATH
 from sftp_client import SftpClient
@@ -28,9 +29,9 @@ if __name__ == "__main__":
 
     # Compression of PDF files
     list_of_files = os.listdir(SRC_PATH)
-    for i in list_of_files:
+    for i in tqdm(list_of_files):
         if i.endswith(".pdf"):
-            new_name = i.split("_")[0].split("-")[1:] + ".pdf"
+            new_name = ("-").join(i.split("_")[0].split("-")[1:]) + ".pdf"
             compress(SRC_PATH + i, OUTPUT_PATH + new_name, power=2)
 
 
@@ -38,7 +39,7 @@ if __name__ == "__main__":
     # dico_dirs = mails_to_string()
 
     # list_of_files_to_send = os.listdir(OUTPUT_PATH)
-    # for i in list_of_files_to_send:
+    # for i in tqdm(list_of_files_to_send):
     #     info_envoi = dico_dirs[i]
     #     create_mail()
     #     change_mail()
@@ -46,5 +47,4 @@ if __name__ == "__main__":
     #     redact_mail(info_envoi, objet, m1, m2)
     #     attach_file(info_envoi)
     #     send_mail()
-    #     print("done")
         
