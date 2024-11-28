@@ -69,6 +69,7 @@ def compress(input_file_path, output_file_path, power=0):
     final_size = os.path.getsize(output_file_path)
     ratio = 1 - (final_size / initial_size)
     print("Compression by {0:.0%}.".format(ratio))
+    print("Disk space saved: {0:.2f}MB.".format((initial_size - final_size) / 1000000))
     print("Final file size is {0:.5f}MB".format(final_size / 1000000))
     print("Done.")
 
